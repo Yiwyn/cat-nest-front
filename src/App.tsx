@@ -1,13 +1,10 @@
-import './App.css'
-import Example from "./pages/Example.tsx";
+import React from 'react';
+import {BrowserRouter} from "react-router-dom";
+import Index from "./components/Index.tsx";
 
-function App() {
-
-    return (
-        <>
-            <Example></Example>
-        </>
-    )
-}
-
-export default App
+const App: React.FC = () => (
+    <BrowserRouter>
+        <Index></Index>
+    </BrowserRouter>
+)
+export default App;
