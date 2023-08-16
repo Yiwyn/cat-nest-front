@@ -1,6 +1,9 @@
 import React from "react";
 import {Avatar, Card} from "antd";
 import {CardInfo} from "../../domain";
+import CoverCmpt from "./CoverCmpt.tsx";
+
+import {SettingOutlined} from '@ant-design/icons';
 
 const {Meta} = Card
 
@@ -23,13 +26,18 @@ const NestCmpt: React.FC<NestInfo> = (nestInfo: NestInfo) => {
                 hoverable
                 size={"small"}
                 style={{width: 240, margin: 5}}
-                cover={<img height={150} alt="example"
-                            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"/>}
+                cover={
+                    <CoverCmpt imgUrl={"https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"}
+                               title={cardInfo.title + author}/>
+                }
+                actions={[
+                    <SettingOutlined key="setting"/>,
+
+                ]}
             >
                 <Meta
                     avatar={<Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel"/>}
-                    title={cardInfo.title}
-                    description={cardInfo.content + author}
+                    description="This is the description"
                 />
             </Card>
         </>

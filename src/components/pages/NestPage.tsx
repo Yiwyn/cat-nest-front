@@ -7,7 +7,7 @@ const NestPage: React.FC = () => {
 
     return (
         <>
-            <NestCmpt cardInfo={new CardInfo("标题", "内容")} author={"yiwyn"}></NestCmpt>
+            <NestCmpt cardInfo={new CardInfo("每日新闻", "内容")} author={"yiwyn"}></NestCmpt>
         </>
     )
 }
