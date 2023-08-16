@@ -3,7 +3,7 @@ import type {MenuProps} from "antd";
 const items: MenuProps['items'] = [
     {
         label: '🏠首页',
-        key: 'index',
+        key: 'nest',
         // icon: <MailOutlined/>,
     },
     {
