@@ -1,11 +1,11 @@
 import React from "react";
 
-interface ConverInfo {
+interface CoverInfo {
     title: string
     imgUrl: string
 }
 
-const CoverCmpt: React.FC<ConverInfo> = (info: ConverInfo) => {
+const CoverCmpt: React.FC<CoverInfo> = (info: CoverInfo) => {
     return (
         <>
             <div style={{position: "relative"}}>
