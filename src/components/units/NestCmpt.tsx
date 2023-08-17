@@ -1,5 +1,5 @@
 import React, {useRef} from "react";
-import {Avatar, Card, Form, Input, message} from "antd";
+import {Avatar, Card, Input, message} from "antd";
 import {CardInfo} from "../../domain";
 import CoverCmpt from "./CoverCmpt.tsx";
 
@@ -35,7 +35,6 @@ const NestCmpt: React.FC<NestInfo> = (nestInfo: NestInfo) => {
         const nextId = number + 1
         if (nextId > 5) {
             //开始校验密码
-            form.resetFields()
             messageApi.info(pwdValues)
             return;
         }
@@ -46,7 +45,6 @@ const NestCmpt: React.FC<NestInfo> = (nestInfo: NestInfo) => {
 
     const pwdInput = useRef<HTMLDivElement>(null)
 
-    const [form] = Form.useForm();
 
     return (
         <>
