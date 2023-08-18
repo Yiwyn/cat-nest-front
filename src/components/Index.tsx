@@ -20,12 +20,13 @@ const Index: React.FC = () => {
         <>
             <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}/>
 
-            <Routes>
-                <Route path={"/"} element={<NestPage/>}/>
-                <Route path={"/nest"} element={<NestPage/>}/>
-                <Route path={"/my"} element={<Example/>}/>
-            </Routes>
-
+            <div style={{margin: "2rem"}}>
+                <Routes>
+                    <Route path={"/"} element={<NestPage/>}/>
+                    <Route path={"/nest"} element={<NestPage/>}/>
+                    <Route path={"/my"} element={<Example/>}/>
+                </Routes>
+            </div>
         </>
     )
 }

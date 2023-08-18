@@ -1,26 +1,21 @@
 import React, {KeyboardEvent, SyntheticEvent, useRef, useState} from "react";
 import {Avatar, Button, Card, Input, message} from "antd";
-import {CardInfo} from "../../domain";
+import {INestInfo} from "../../domain";
 import CoverCmpt from "./CoverCmpt.tsx";
 
 
 const {Meta} = Card
 
-interface NestInfo {
-    cardInfo: CardInfo
-    author: string
-    lockStatus: boolean
-}
 
 /**
  * 猫窝小组件
  * @constructor
  */
-const NestCmpt: React.FC<NestInfo> = (nestInfo: NestInfo) => {
+const NestCmpt: React.FC<INestInfo> = (nestInfo: INestInfo) => {
 
     const [messageApi, contextHolder] = message.useMessage()
 
-    const {cardInfo, author, lockStatus} = nestInfo
+    const {cardInfo} = nestInfo
 
     const [pwdValues, setPwdValues] = useState(Array(6).fill(""))
 
@@ -53,8 +48,9 @@ const NestCmpt: React.FC<NestInfo> = (nestInfo: NestInfo) => {
     const onPwdKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
         const key = e.key;
         if (key === 'Backspace') {
-            console.log(e)
             const currentId = Number.parseInt((e.target as HTMLInputElement).id)
+            pwdValues[currentId] = ''
+            setPwdValues([...pwdValues])
             const preId = Math.max(currentId - 1, 0)
             const element = pwdInput.current?.children[preId] as HTMLInputElement
             element.focus()
@@ -78,7 +74,7 @@ const NestCmpt: React.FC<NestInfo> = (nestInfo: NestInfo) => {
                     <div ref={pwdInput} style={{display: "flex", justifyContent: "space-around", alignItems: "center"}}>
                         {Array.from(Array(6).keys()).map(e => (
                             <Input size={"small"} maxLength={1} style={{
-                                height: "2rem", width: "2rem"
+                                height: "1.8rem", width: "1.8rem"
                             }} onChange={pwdChange} id={e.toString()}
                                    onSelect={onPwdSelect}
                                    onKeyDown={onPwdKeyDown}
@@ -105,10 +101,10 @@ const NestCmpt: React.FC<NestInfo> = (nestInfo: NestInfo) => {
             <Card
                 hoverable
                 size={"small"}
-                style={{width: 240, margin: 5}}
+                style={{width: 220, margin: 5}}
                 cover={
                     <CoverCmpt imgUrl={"https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"}
-                               title={cardInfo.title + author}/>
+                               title={cardInfo.title + cardInfo.author}/>
                 }
             >
                 <Meta
@@ -116,7 +112,7 @@ const NestCmpt: React.FC<NestInfo> = (nestInfo: NestInfo) => {
                     description="This is the description"
                 />
                 <div>
-                    {actionsBar(lockStatus)}
+                    {actionsBar(cardInfo.lockStatus)}
                 </div>
             </Card>
         </>
