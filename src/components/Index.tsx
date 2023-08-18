@@ -7,7 +7,7 @@ import NestPage from "./pages/NestPage.tsx";
 
 const Index: React.FC = () => {
 
-    const [current, setCurrent] = useState('index');
+    const [current, setCurrent] = useState('nest');
     const navigate = useNavigate()
 
     const onClick: MenuProps['onClick'] = (e) => {
