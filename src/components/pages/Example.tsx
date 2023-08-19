@@ -1,5 +1,7 @@
 import {Button, Input, message} from "antd";
 import {useState} from "react";
+import {get} from "../../utils/http";
+
 
 const {TextArea} = Input
 
@@ -31,8 +33,10 @@ export default function Example() {
         messageApi.info(message)
     };
 
-    const showTextArea = () => {
-        console.log(context)
+    const showTextArea = async () => {
+        messageApi.info(context)
+        const {data: {result}} = await get("/getImages?page=0", {params: {size: 10}})
+        console.log(result)
         setContext("")
     }
 

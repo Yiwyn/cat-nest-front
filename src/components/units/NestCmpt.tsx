@@ -17,7 +17,7 @@ const NestCmpt: React.FC<INestInfo> = (nestInfo: INestInfo) => {
 
     const {cardInfo} = nestInfo
 
-    const [pwdValues, setPwdValues] = useState(Array(6).fill(""))
+    const [pwdValues, setPwdValues] = useState<string[]>(Array(6).fill(""))
 
     // 检测密码框变化
     const pwdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
