@@ -1,7 +1,9 @@
 import axios, {AxiosRequestConfig} from "axios";
 
-axios.defaults.baseURL = 'https://api.apiopen.top/api/'
+import {dev_api} from "../../config/http";
 
+// axios.defaults.baseURL = 'https://api.apiopen.top/api/'
+axios.defaults.baseURL = dev_api
 const get = (url: string, config?: AxiosRequestConfig) => {
     return axios.get(url, config)
 }
