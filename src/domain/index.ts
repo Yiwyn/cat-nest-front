@@ -1,3 +1,5 @@
+import React from "react";
+
 class CardInfo {
     title: string
     content: string
@@ -13,13 +15,24 @@ class CardInfo {
     }
 }
 
+
+class Route {
+    path: string
+    element: React.FC
+
+    constructor(path: string, element: React.FC) {
+        this.path = path;
+        this.element = element;
+    }
+}
+
+
 interface INestInfo {
     cardInfo: CardInfo
-
 }
 
 
 export {
-    CardInfo
+    CardInfo, Route
 }
 export type {INestInfo}

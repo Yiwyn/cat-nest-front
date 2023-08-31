@@ -2,8 +2,7 @@ import React, {useState} from "react";
 import {Menu, MenuProps} from "antd";
 import {items} from "../config/menu";
 import {Route, Routes, useNavigate} from "react-router-dom";
-import Example from "./pages/Example.tsx";
-import NestPage from "./pages/NestPage.tsx";
+import {routers} from "../router";
 
 const Index: React.FC = () => {
 
@@ -22,9 +21,9 @@ const Index: React.FC = () => {
 
             <div style={{margin: "2rem"}}>
                 <Routes>
-                    <Route path={"/"} element={<NestPage/>}/>
-                    <Route path={"/nest"} element={<NestPage/>}/>
-                    <Route path={"/my"} element={<Example/>}/>
+                    {routers.map(u => (
+                        <Route path={u.path} element={<u.element/>}/>
+                    ))}
                 </Routes>
             </div>
         </>
