@@ -16,11 +16,13 @@ class CardInfo {
 }
 
 
-class Route {
+class CatNestRoute {
+    name: string
     path: string
     element: React.FC
 
-    constructor(path: string, element: React.FC) {
+    constructor(name: string, path: string, element: React.FC) {
+        this.name = name;
         this.path = path;
         this.element = element;
     }
@@ -33,6 +35,6 @@ interface INestInfo {
 
 
 export {
-    CardInfo, Route
+    CardInfo, CatNestRoute
 }
 export type {INestInfo}

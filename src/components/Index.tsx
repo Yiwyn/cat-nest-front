@@ -32,7 +32,7 @@ const Index: React.FC = () => {
             <div style={{margin: "2rem"}}>
                 <Routes>
                     {routers.map(u => (
-                        <Route path={u.path} element={<u.element/>}/>
+                        <Route path={u.path} element={<u.element/>} key={u.name}/>
                     ))}
                 </Routes>
             </div>

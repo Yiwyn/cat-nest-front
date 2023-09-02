@@ -3,6 +3,7 @@ import NestCmpt from "../units/NestCmpt.tsx";
 import {CardInfo} from "../../domain";
 import {FloatButton, List, Segmented, Space} from "antd";
 import {FireOutlined} from '@ant-design/icons';
+import style from "./NestPage.module.css"
 
 const NestPage: React.FC = () => {
 
@@ -56,10 +57,22 @@ const NestPage: React.FC = () => {
                 style={{right: 24}}
                 icon={<FireOutlined/>}
             >
-                {/*<FloatButton description={"创建了一个猫窝 去看看吧"}/>*/}
-                {/*<FloatButton icon={<CommentOutlined/>}/>*/}
-                <div style={{position: "absolute", width: "300px", bottom: "0", right: "0"}}>创建了一个猫窝 ， 去看看吧
-                    ～！
+                <div className={style.globalBox}>
+                    {/*<FloatButton description={"创建了一个猫窝 去看看吧"}/>*/}
+                    {/*<FloatButton icon={<CommentOutlined/>}/>*/}
+                    <div className={style.globalInfo}>创建了一个猫窝 ， 去看看吧
+                        ～！
+                    </div>
+
+                    <div className={style.globalInfo}>创建了一个猫窝 ， 去看看吧
+                        ～！
+                    </div>
+                    <div className={style.globalInfo}>创建了一个猫窝 ， 去看看吧
+                        ～！
+                    </div>
+                    <div className={style.globalInfo}>创建了一个猫窝 ， 去看看吧
+                        ～！
+                    </div>
                 </div>
             </FloatButton.Group>
         </>
