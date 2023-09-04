@@ -14,6 +14,14 @@ const NestPage: React.FC = () => {
         new CardInfo("每日新闻", "内容", "YIWYN", false),
         new CardInfo("每日新闻", "内容", "YIWYN", true),
         new CardInfo("每日新闻", "内容", "YIWYN", true),
+        new CardInfo("每日新闻", "内容", "YIWYN", true),
+        new CardInfo("每日新闻", "内容", "YIWYN", true),
+        new CardInfo("每日新闻", "内容", "YIWYN", true),
+        new CardInfo("每日新闻", "内容", "YIWYN", true),
+        new CardInfo("每日新闻", "内容", "YIWYN", true),
+        new CardInfo("每日新闻", "内容", "YIWYN", true),
+        new CardInfo("每日新闻", "内容", "YIWYN", true),
+        new CardInfo("每日新闻", "内容", "YIWYN", true)
     ])
 
     const [open, setOpen] = useState(true);
@@ -24,19 +32,19 @@ const NestPage: React.FC = () => {
 
     return (
         <>
-            <Space direction="vertical">
+            <Space direction="vertical" style={{margin: "1rem"}}>
                 <Segmented options={['OPEN', 'CLOSE', 'LOCK', 'UNLOCK']}/>
                 <Segmented options={['Daily', 'Weekly', 'Monthly', 'Quarterly', 'Yearly']}/>
             </Space>
 
-            <Space>
+            <Space style={{margin: "1rem"}}>
                 <List
                     grid={{
                         gutter: 16,
                         xs: 1,
                         sm: 2,
                         md: 4,
-                        lg: 4,
+                        lg: 5,
                         xl: 5,
                         xxl: 5,
                     }}
@@ -58,8 +66,6 @@ const NestPage: React.FC = () => {
                 icon={<FireOutlined/>}
             >
                 <div className={style.globalBox}>
-                    {/*<FloatButton description={"创建了一个猫窝 去看看吧"}/>*/}
-                    {/*<FloatButton icon={<CommentOutlined/>}/>*/}
                     <div className={style.globalInfo}>创建了一个猫窝 ， 去看看吧
                         ～！
                     </div>

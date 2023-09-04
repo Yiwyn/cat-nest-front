@@ -17,8 +17,17 @@ const Index: React.FC = () => {
 
     return (
         <>
-            <div style={{display: 'flex', alignItems: 'center', justifyContent: "space-between"}}>
-                <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}/>
+            <div
+                style={{
+                    position: 'sticky',
+                    top: 0,
+                    zIndex: 1,
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: "flex-start"
+                }}>
+                <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}
+                      style={{width: "40%"}}/>
                 <div>
                     <Avatar
                         draggable={false}

@@ -3,14 +3,15 @@ import type {MenuProps} from "antd";
 const items: MenuProps['items'] = [
     {
         label: '🏠首页',
-        key: 'nest',
-        // icon: <MailOutlined/>,
+        key: 'nest'
     },
     {
         label: '🐱猫窝',
         key: 'my',
-        // icon: <AppstoreOutlined/>,
-        disabled: false,
+    },
+    {
+        label: 'room',
+        key: 'room'
     }
 ]
 
