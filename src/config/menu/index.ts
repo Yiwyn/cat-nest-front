@@ -12,6 +12,10 @@ const items: MenuProps['items'] = [
     {
         label: 'room',
         key: 'room'
+    },
+    {
+        label: 'create',
+        key: 'create'
     }
 ]
 
