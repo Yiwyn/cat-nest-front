@@ -1,4 +1,5 @@
 import React from "react";
+import MessageCmpt from "../units/MessageCmpt.tsx";
 
 
 const ChatRoom: React.FC = () => {
@@ -6,7 +7,9 @@ const ChatRoom: React.FC = () => {
 
     return (
         <>
-            聊天室
+            <MessageCmpt/>
+            <MessageCmpt/>
+            <MessageCmpt/>
         </>
     )
 }
