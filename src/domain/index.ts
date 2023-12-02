@@ -15,6 +15,20 @@ class CardInfo {
     }
 }
 
+interface INestInfo {
+    cardInfo: CardInfo
+}
+
+
+class MessageInfo {
+
+    msgContent: string
+
+    constructor(content: string) {
+        this.msgContent = content;
+    }
+}
+
 
 class CatNestRoute {
     name: string
@@ -29,12 +43,7 @@ class CatNestRoute {
 }
 
 
-interface INestInfo {
-    cardInfo: CardInfo
-}
-
-
 export {
-    CardInfo, CatNestRoute
+    CardInfo, CatNestRoute, MessageInfo
 }
 export type {INestInfo}

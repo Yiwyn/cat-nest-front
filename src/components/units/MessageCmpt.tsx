@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {Avatar, Popover, Space} from "antd";
 import {UserOutlined} from '@ant-design/icons';
+import {MessageInfo} from "../../domain";
 
-const MessageCmpt: React.FC = () => {
+const MessageCmpt: React.FC<MessageInfo> = (messageInfo: MessageInfo) => {
 
 
     const username: string = "Yiwyn"
@@ -32,14 +33,14 @@ const MessageCmpt: React.FC = () => {
                     onOpenChange={handleOpenChange}
                 >
                     <div style={{
-                        marginLeft: "2rem",
+                        marginLeft: "4rem",
                         width: "max-content",
-                        padding: "0.5rem 1rem",
-                        boxShadow: "0.5px 0.5px 1px 1px gray",
-                        borderRadius: "0.3rem"
+                        maxWidth: "100%",
+                        padding: "0.5rem 0.5rem",
+                        boxShadow: "3px 3px 5px 1px",
+                        borderRadius: "0.3rem",
                     }}>
-                        Hello CatNest! 你好 猫窝!
-
+                        {messageInfo.msgContent}
 
                     </div>
                 </Popover>

@@ -27,7 +27,7 @@ const Index: React.FC = () => {
                     alignItems: "flex-start"
                 }}>
                 <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}
-                      style={{width: "40%"}}/>
+                      style={{width: "100%"}}/>
                 <div>
                     <Avatar
                         draggable={false}
